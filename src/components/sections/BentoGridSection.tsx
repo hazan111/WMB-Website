@@ -1,4 +1,4 @@
-import { Users, BarChart3, Shield, Zap, Database } from 'lucide-react'
+import { Users, BarChart3, Shield, Database } from 'lucide-react'
 
 const BentoGridSection = () => {
   return (
@@ -32,20 +32,6 @@ const BentoGridSection = () => {
             </div>
           </div>
           
-          {/* Card 2 - Real-time Sync */}
-          <div className="col-span-1 bg-[#1e293b]/60 border border-slate-700/50 rounded-2xl p-8 hover:border-slate-600 transition-colors">
-            <div className="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center mb-8 border border-purple-500/10">
-              <Zap className="text-purple-500 w-5 h-5" />
-            </div>
-            <h3 className="text-xl font-medium text-white mb-2">Gerçek Zamanlı Senkronizasyon</h3>
-            <p className="text-sm text-slate-400 mb-6">
-              WebSocket ile anlık sipariş takibi. Web, mobil ve mutfak ekranları arasında milisaniyeler içinde senkronizasyon.
-            </p>
-            <div className="flex gap-2">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-              <span className="text-[10px] text-slate-500 uppercase tracking-wider">Canlı Bağlantı</span>
-            </div>
-          </div>
           
           {/* Card 3 - Role & Permission */}
           <div className="col-span-1 bg-[#1e293b]/60 border border-slate-700/50 rounded-2xl p-8 hover:border-slate-600 transition-colors relative overflow-hidden">

@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from 'react'
-import { Building2, MapPin, Package, ShoppingBag, Menu as MenuIcon, Users, Shield, BarChart3, UtensilsCrossed, Settings, Plus, Search, Edit, Trash2, TrendingUp, ShoppingCart, Folder, Calendar, X, ChevronDown } from 'lucide-react'
+import { Building2, MapPin, Package, ShoppingBag, Menu as MenuIcon, Users, Shield, BarChart3, UtensilsCrossed, Settings, Plus, Search, Edit, TrendingUp, ShoppingCart, Folder } from 'lucide-react'
 
 type TabType = 'dashboard' | 'companies' | 'branches' | 'menus' | 'products' | 'tables' | 'reports'
 
