@@ -1,5 +1,6 @@
+import { memo } from 'react'
 
-const HeroSection = () => {
+const HeroSection = memo(() => {
   return (
     <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
       <div className="absolute inset-0 bg-grid z-0 pointer-events-none"></div>
@@ -50,6 +51,8 @@ const HeroSection = () => {
       </div>
     </section>
   )
-}
+})
+
+HeroSection.displayName = 'HeroSection'
 
 export default HeroSection

@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { Check, Zap, Building2, Crown } from 'lucide-react'
 
 const PricingSection = () => {
   const [isYearly, setIsYearly] = useState(false)
 
-  const plans = [
+  const plans = useMemo(() => [
     {
       name: 'Başlangıç',
       icon: Zap,
@@ -59,15 +59,15 @@ const PricingSection = () => {
       ],
       popular: false
     }
-  ]
+  ], [])
 
-  const formatPrice = (price: number) => {
+  const formatPrice = useCallback((price: number) => {
     return new Intl.NumberFormat('tr-TR', {
       style: 'currency',
       currency: 'TRY',
       minimumFractionDigits: 0
     }).format(price)
-  }
+  }, [])
 
   return (
     <section id="pricing" className="py-24">

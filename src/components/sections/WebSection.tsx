@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import { Building2, MapPin, Package, ShoppingBag, Menu as MenuIcon, Users, Shield, BarChart3, UtensilsCrossed, Settings, Plus, Search, Edit, Trash2, TrendingUp, ShoppingCart, Folder, Calendar, X, ChevronDown } from 'lucide-react'
 
 type TabType = 'dashboard' | 'companies' | 'branches' | 'menus' | 'products' | 'tables' | 'reports'
@@ -7,7 +7,7 @@ const WebSection = () => {
   const [activeTab, setActiveTab] = useState<TabType>('dashboard')
   const [selectedReportType, setSelectedReportType] = useState('order')
 
-  const tabs = [
+  const tabs = useMemo(() => [
     { id: 'dashboard' as TabType, label: 'Dashboard', icon: BarChart3 },
     { id: 'companies' as TabType, label: 'Şirketler', icon: Building2 },
     { id: 'branches' as TabType, label: 'Şubeler', icon: MapPin },
@@ -15,9 +15,9 @@ const WebSection = () => {
     { id: 'products' as TabType, label: 'Ürünler', icon: ShoppingBag },
     { id: 'tables' as TabType, label: 'Masa Yönetimi', icon: UtensilsCrossed },
     { id: 'reports' as TabType, label: 'Raporlar', icon: BarChart3 }
-  ]
+  ], [])
 
-  const features = [
+  const features = useMemo(() => [
     {
       icon: Building2,
       title: 'Şirket Yönetimi',
@@ -58,9 +58,9 @@ const WebSection = () => {
       title: 'Rol & İzin',
       description: 'Granüler izin sistemi ile detaylı erişim kontrolü.'
     }
-  ]
+  ], [])
 
-  const renderContent = () => {
+  const renderContent = useCallback(() => {
     switch (activeTab) {
       case 'dashboard':
         return (
@@ -567,7 +567,7 @@ const WebSection = () => {
       default:
         return null
     }
-  }
+  }, [activeTab, selectedReportType])
 
   return (
     <section id="web" className="py-32 relative">

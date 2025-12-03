@@ -1,4 +1,6 @@
-const CTASection = () => {
+import { memo } from 'react'
+
+const CTASection = memo(() => {
   return (
     <section className="py-32 relative">
       <div className="max-w-2xl mx-auto px-6 text-center relative z-10">
@@ -17,6 +19,8 @@ const CTASection = () => {
       </div>
     </section>
   )
-}
+})
+
+CTASection.displayName = 'CTASection'
 
 export default CTASection
