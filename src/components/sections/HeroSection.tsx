@@ -42,7 +42,7 @@ const HeroSection = memo(() => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4 animate-fade-in delay-300 opacity-0">
           <button 
             onClick={() => setIsDemoModalOpen(true)}
-            className="group h-14 px-8 rounded-xl bg-blue-600 text-white flex items-center justify-center gap-3 hover:bg-blue-500 hover:shadow-xl hover:shadow-blue-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition-all active:scale-95 shadow-lg shadow-blue-500/30 font-medium text-base min-w-[200px] min-h-[44px]"
+            className="group h-14 px-8 rounded-xl bg-blue-600 text-white flex items-center justify-center gap-3 hover:bg-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition-all active:scale-95 shadow-lg shadow-blue-500/30 font-medium text-base min-w-[200px] min-h-[44px]"
             aria-label="Demo talep formunu aç"
           >
             Demo Talep Et
@@ -52,7 +52,7 @@ const HeroSection = memo(() => {
           </button>
           <a 
             href="#pricing" 
-            className="group h-14 px-8 rounded-xl bg-slate-800/90 text-white border border-slate-600/50 flex items-center justify-center gap-3 hover:bg-slate-700 hover:border-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition-all active:scale-95 font-medium text-base backdrop-blur-sm min-w-[200px] min-h-[44px]"
+            className="group h-14 px-8 rounded-xl bg-slate-800/90 text-white border border-white/20 flex items-center justify-center gap-3 hover:bg-slate-700 hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition-all active:scale-95 font-medium text-base backdrop-blur-sm min-w-[200px] min-h-[44px]"
           >
             Fiyatlandırmayı İncele
           </a>

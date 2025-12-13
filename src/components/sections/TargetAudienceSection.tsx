@@ -1,5 +1,16 @@
 import { memo } from 'react'
-import { Check } from 'lucide-react'
+import { 
+  TrendingUp, 
+  Building2, 
+  BarChart3, 
+  Package, 
+  Users,
+  Smartphone,
+  LayoutGrid,
+  CreditCard,
+  RefreshCw,
+  Shield
+} from 'lucide-react'
 
 const TargetAudienceSection = memo(() => {
   return (
@@ -27,23 +38,23 @@ const TargetAudienceSection = memo(() => {
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <TrendingUp className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Günlük ve aylık ciro takibi</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <Building2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Şube bazlı performans karşılaştırmaları</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <BarChart3 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Ürün ve kategori satış analizleri</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <Package className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Stok ve maliyet kontrolü</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <Users className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Kullanıcı, rol ve yetki yönetimi</span>
               </li>
             </ul>
@@ -59,23 +70,23 @@ const TargetAudienceSection = memo(() => {
             </p>
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <Smartphone className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Mobil cihaz üzerinden hızlı sipariş oluşturma</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <LayoutGrid className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Masa durumu ve aktif sipariş takibi</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <CreditCard className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Ürün bazlı ve parçalı ödeme desteği</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <RefreshCw className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Sipariş ve mutfak süreçlerinde anlık güncellemeler</span>
               </li>
               <li className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" aria-hidden="true" />
+                <Shield className="w-5 h-5 text-emerald-400 flex-shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-slate-300 text-base leading-relaxed">Hata riskini azaltan sade arayüz</span>
               </li>
             </ul>

@@ -174,10 +174,10 @@ const PricingSection = () => {
 
                   <button
                     onClick={() => setIsDemoModalOpen(true)}
-                    className={`w-full py-3 rounded-lg font-medium text-sm transition-all min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
+                    className={`w-full py-3 rounded-xl font-medium text-sm transition-all min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
                       plan.popular
-                        ? 'bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-500/20 active:scale-95'
-                        : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 active:scale-95'
+                        ? 'bg-blue-600 text-white hover:bg-blue-500 shadow-lg shadow-blue-500/30 active:scale-95'
+                        : 'bg-slate-800 text-white hover:bg-slate-700 border border-white/20 active:scale-95'
                     }`}
                     aria-label={`${plan.name} planını seç - Demo talep et`}
                   >

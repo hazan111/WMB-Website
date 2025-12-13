@@ -253,7 +253,7 @@ const DemoModal = ({ isOpen, onClose }: DemoModalProps) => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px]"
+                className="w-full py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-h-[44px] shadow-lg shadow-blue-500/30"
               >
                 {isSubmitting ? 'Gönderiliyor...' : 'Demo Talep Et'}
               </button>

@@ -32,7 +32,7 @@ const CTASection = memo(() => {
             </button>
             <a 
               href="#pricing" 
-              className="w-full sm:w-auto px-8 py-4 bg-slate-800/80 text-white border border-slate-700 rounded-xl text-base font-medium hover:bg-slate-700/80 hover:border-slate-600 transition-all active:scale-95 text-center backdrop-blur-sm min-h-[52px] flex items-center justify-center"
+              className="w-full sm:w-auto px-8 py-4 bg-slate-800/80 text-white border border-white/20 rounded-xl text-base font-medium hover:bg-slate-700/80 hover:border-white/30 transition-all active:scale-95 text-center backdrop-blur-sm min-h-[52px] flex items-center justify-center"
             >
               Fiyatlandırmayı İncele
             </a>

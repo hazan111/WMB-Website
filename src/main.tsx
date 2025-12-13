@@ -1,5 +1,6 @@
 import { StrictMode, lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 import './styles/globals.css'
 import App from './App.tsx'
 
@@ -25,10 +26,16 @@ const rootElement = document.getElementById('root')!
 if (isDevelopment) {
   createRoot(rootElement).render(
     <StrictMode>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </StrictMode>
   )
 } else {
-  createRoot(rootElement).render(<App />)
+  createRoot(rootElement).render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  )
 }
 

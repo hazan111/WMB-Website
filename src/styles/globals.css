@@ -96,16 +96,41 @@
 
 .phone-fan-container:hover .phone-right {
   transform: translate3d(240px, 0, 0) scale3d(0.95, 0.95, 1) rotate(6deg);
+}
+
+/* Solution Cards Animations */
+.solution-card.is-visible {
   opacity: 1;
-  z-index: 30;
-  filter: blur(0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-perspective: 1000px;
-  perspective: 1000px;
-  will-change: transform;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  transform: translateY(0);
+}
+
+.mini-icon.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.card-icon:hover {
+  transform: scale(1.05);
+}
+
+.solution-card:hover .card-icon {
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.35);
+}
+
+.solution-card:nth-child(1):hover .card-icon {
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.35);
+}
+
+.solution-card:nth-child(2):hover .card-icon {
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+}
+
+.solution-card:nth-child(3):hover .card-icon {
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.35);
+}
+
+.solution-card:nth-child(4):hover .card-icon {
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
 }
 
 /* On mobile, stack vertically with no hover effects needed */

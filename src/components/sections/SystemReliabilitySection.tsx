@@ -1,5 +1,10 @@
 import { memo } from 'react'
-import { Check } from 'lucide-react'
+import { 
+  Shield, 
+  Settings,
+  Building2,
+  Check
+} from 'lucide-react'
 
 const SystemReliabilitySection = memo(() => {
   return (
@@ -19,9 +24,14 @@ const SystemReliabilitySection = memo(() => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
           {/* Card 1: Güvenli Altyapı */}
           <div className="bg-[#1e293b]/60 border border-slate-700/50 rounded-2xl p-6 md:p-8 hover:border-slate-600 transition-colors">
-            <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">
-              Güvenli Altyapı
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0">
+                <Shield className="w-5 h-5 text-blue-400" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-semibold text-white">
+                Güvenli Altyapı
+              </h3>
+            </div>
             <p className="text-slate-300 text-base mb-6 leading-relaxed">
               Verileriniz modern altyapı üzerinde güvenli şekilde saklanır ve düzenli olarak yedeklenir.
             </p>
@@ -43,9 +53,14 @@ const SystemReliabilitySection = memo(() => {
 
           {/* Card 2: Kurulum ve Destek */}
           <div className="bg-[#1e293b]/60 border border-slate-700/50 rounded-2xl p-6 md:p-8 hover:border-slate-600 transition-colors">
-            <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">
-              Kurulum ve Destek
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0">
+                <Settings className="w-5 h-5 text-emerald-400" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-semibold text-white">
+                Kurulum ve Destek
+              </h3>
+            </div>
             <p className="text-slate-300 text-base mb-6 leading-relaxed">
               Sisteme hızlı geçiş ve sorunsuz kullanım için kurulum ve destek süreci sunulur.
             </p>
@@ -67,9 +82,14 @@ const SystemReliabilitySection = memo(() => {
 
           {/* Card 3: Ölçeklenebilir Yapı */}
           <div className="bg-[#1e293b]/60 border border-slate-700/50 rounded-2xl p-6 md:p-8 hover:border-slate-600 transition-colors">
-            <h3 className="text-xl md:text-2xl font-semibold text-white mb-4">
-              Ölçeklenebilir Yapı
-            </h3>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-10 h-10 rounded-lg bg-amber-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0">
+                <Building2 className="w-5 h-5 text-amber-400" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-semibold text-white">
+                Ölçeklenebilir Yapı
+              </h3>
+            </div>
             <p className="text-slate-300 text-base mb-6 leading-relaxed">
               İşletmeniz büyüdükçe sistem de sizinle birlikte büyür.
             </p>
