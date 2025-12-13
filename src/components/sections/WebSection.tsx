@@ -607,10 +607,10 @@ const WebSection = () => {
             Web Yönetim Paneli
           </div>
           <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-white mb-6">
-            Tüm operasyonlarınızı<br />tek yerden yönetin
+            Tüm Operasyonlarınızı<br />Tek Platformdan Yönetin
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Modern, responsive web arayüzü ile masaüstü ve tablet cihazlardan tüm işlemlerinizi gerçekleştirin.
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            Güçlü web yönetim paneli ile masaüstü ve tablet cihazlardan şirket, şube, menü, ürün ve personel yönetimini gerçekleştirin. Gerçek zamanlı veri ve kapsamlı raporlama ile iş kararlarınızı hızlandırın.
           </p>
         </div>
 

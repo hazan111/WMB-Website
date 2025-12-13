@@ -5,9 +5,14 @@ const BentoGridSection = () => {
   return (
     <section id="features" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-medium tracking-tight text-white mb-12 text-center">
-          Restoran yönetimi için tasarlandı
-        </h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-white mb-4">
+            İşletmenizi Güçlendiren Özellikler
+          </h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            Operasyonel verimliliği artıran, kar marjlarını optimize eden ve müşteri memnuniyetini yükselten profesyonel araçlar.
+          </p>
+        </div>
         
         {/* 
           Example Below-the-fold Image Usage (lazy-loaded):
@@ -33,8 +38,8 @@ const BentoGridSection = () => {
               <span className="text-xs font-medium text-slate-500">Analitik</span>
             </div>
             <h3 className="text-xl font-medium text-white mb-2">Kapsamlı Dashboard ve Raporlama</h3>
-            <p className="text-sm text-slate-400 max-w-md">
-              Gerçek zamanlı gelir takibi, ürün performans analizi, masa devir oranları ve detaylı satış raporları ile işletmenizi optimize edin.
+            <p className="text-sm text-slate-400 max-w-md leading-relaxed">
+              Karar verme süreçlerinizi hızlandırın. Gerçek zamanlı gelir takibi, ürün performans analizi, masa devir oranları ve detaylı satış raporları ile işletmenizi veri odaklı yönetin ve karlılığınızı artırın.
             </p>
             {/* Chart Visual */}
             <div className="mt-8 h-32 flex items-end gap-2 opacity-50 group-hover:opacity-80 transition-opacity">
@@ -55,8 +60,8 @@ const BentoGridSection = () => {
                 <Shield className="text-blue-500 w-5 h-5" />
               </div>
               <h3 className="text-xl font-medium text-white mb-2">Rol ve İzin Yönetimi</h3>
-              <p className="text-sm text-slate-400">
-                Detaylı rol tabanlı erişim kontrolü. Her kullanıcı için özelleştirilebilir izinler ve güvenlik.
+              <p className="text-sm text-slate-400 leading-relaxed">
+                Güvenli ve kontrollü operasyon. Detaylı rol tabanlı erişim kontrolü ile her kullanıcı için özelleştirilebilir izinler. Veri güvenliğinizi koruyun ve operasyonel riskleri minimize edin.
               </p>
             </div>
           </div>
@@ -67,8 +72,8 @@ const BentoGridSection = () => {
               <Users className="text-indigo-400 w-5 h-5" />
             </div>
             <h3 className="text-xl font-medium text-white mb-2">Çoklu Şirket Desteği</h3>
-            <p className="text-sm text-slate-400">
-              Birden fazla şirket ve şube yönetimi. Her şube için bağımsız menü, ürün ve kullanıcı yönetimi.
+            <p className="text-sm text-slate-400 leading-relaxed">
+              Ölçeklenebilir yönetim. Birden fazla şirket ve şube yönetimini tek platformdan gerçekleştirin. Her şube için bağımsız menü, ürün ve kullanıcı yönetimi ile merkezi kontrol ve yerel esneklik sağlayın.
             </p>
           </div>
           
@@ -80,8 +85,8 @@ const BentoGridSection = () => {
                 <Database className="text-amber-500 w-5 h-5" />
               </div>
               <h3 className="text-xl font-medium text-white mb-2">Modern Teknoloji Yığını</h3>
-              <p className="text-sm text-slate-400">
-                React 19, TypeScript, Hono, Bun, MongoDB. Hızlı, güvenli ve ölçeklenebilir mimari.
+              <p className="text-sm text-slate-400 leading-relaxed mb-4">
+                Geleceğe hazır altyapı. React 19, TypeScript, Hono, Bun ve MongoDB ile güçlendirilmiş hızlı, güvenli ve ölçeklenebilir mimari. Yüksek performans, düşük gecikme süresi ve sürekli güncellenen teknoloji desteği.
               </p>
             </div>
             <div className="bg-[#0f172a] border border-slate-700/50 rounded-lg p-4 w-full max-w-xs">

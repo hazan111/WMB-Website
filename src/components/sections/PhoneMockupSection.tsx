@@ -14,7 +14,7 @@ const PhoneMockupSection = () => {
               </div>
               <h3 className="text-xl font-medium text-white tracking-tight">Web Dashboard</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                Kapsamlı yönetim paneli. Şirket, şube, menü, ürün yönetimi ve detaylı raporlama ile tüm operasyonlarınızı kontrol edin.
+                Operasyonel kontrol merkezi. Şirket, şube, menü ve ürün yönetimi ile detaylı raporlama. Gerçek zamanlı veri ile karar verme süreçlerinizi hızlandırın ve işletme performansınızı optimize edin.
               </p>
             </div>
           </div>
@@ -286,7 +286,7 @@ const PhoneMockupSection = () => {
               </div>
               <h3 className="text-xl font-medium text-white tracking-tight">Mobil Garson Uygulaması</h3>
               <p className="text-sm text-slate-400 leading-relaxed">
-                React Native ile geliştirilmiş mobil uygulama. Masaları görüntüleyin, sipariş oluşturun ve gerçek zamanlı takip edin.
+                Servis hızınızı artırın. Masaları görüntüleyin, sipariş oluşturun, mutfak ile senkronize çalışın ve müşteri memnuniyetini yükseltin. Offline çalışma desteği ile internet kesintilerinde bile hizmet vermeye devam edin.
               </p>
             </div>
           </div>
