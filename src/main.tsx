@@ -18,9 +18,17 @@ plasmaRoot.render(
   </Suspense>
 )
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+// Use StrictMode only in development for better performance in production
+const isDevelopment = import.meta.env.DEV
+const rootElement = document.getElementById('root')!
+
+if (isDevelopment) {
+  createRoot(rootElement).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  )
+} else {
+  createRoot(rootElement).render(<App />)
+}
 

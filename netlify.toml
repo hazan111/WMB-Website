@@ -10,8 +10,36 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Static assets caching (JS, CSS, images, fonts)
 [[headers]]
-  for = "/assets/*"
+  for = "/assets/*.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*.{png,jpg,jpeg,svg,webp,ico,woff,woff2}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML files - no aggressive caching for SPA updates
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Sitemap and robots.txt - moderate caching
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
 

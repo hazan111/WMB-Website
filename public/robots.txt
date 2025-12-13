@@ -1,0 +1,21 @@
+# robots.txt for WMB Tracker Landing Page
+# 
+# This file tells search engines which pages they can and cannot access.
+# 
+# TODO: Replace https://your-domain.com with your actual production domain
+
+# Allow all search engines to crawl all pages
+User-agent: *
+Allow: /
+
+# Disallow crawling of admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+# TODO: Replace https://your-domain.com with your actual production domain
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Crawl-delay (optional, in seconds)
+# Crawl-delay: 1
+

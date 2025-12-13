@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Sitemap for WMB Tracker Landing Page
+  
+  This is a single-page application (SPA), so all content is on the homepage.
+  For multi-page sites, add additional <url> entries for each page.
+  
+  TODO: Replace https://your-domain.com with your actual production domain
+  TODO: Update <lastmod> with the current date when deploying
+  TODO: Adjust <priority> and <changefreq> based on your content update frequency
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <!-- TODO: Replace https://your-domain.com with your actual production domain -->
+    <loc>https://your-domain.com/</loc>
+    <!-- TODO: Update with current date in YYYY-MM-DD format -->
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- 
+    For future pages, add entries like this:
+    
+    <url>
+      <loc>https://your-domain.com/about</loc>
+      <lastmod>2024-01-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+    </url>
+  -->
+</urlset>
+

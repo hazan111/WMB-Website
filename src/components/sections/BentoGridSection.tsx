@@ -1,4 +1,5 @@
 import { Users, BarChart3, Shield, Database } from 'lucide-react'
+// import OptimizedImage from '../ui/OptimizedImage'
 
 const BentoGridSection = () => {
   return (
@@ -7,6 +8,20 @@ const BentoGridSection = () => {
         <h2 className="text-3xl font-medium tracking-tight text-white mb-12 text-center">
           Restoran yönetimi için tasarlandı
         </h2>
+        
+        {/* 
+          Example Below-the-fold Image Usage (lazy-loaded):
+          <OptimizedImage
+            src="/images/feature-image.jpg"
+            srcSet="/images/feature-image-400w.jpg 400w, /images/feature-image-800w.jpg 800w"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+            alt="Feature description"
+            width={800}
+            height={600}
+            isLCP={false}
+            className="rounded-lg"
+          />
+        */}
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 - Dashboard & Analytics */}

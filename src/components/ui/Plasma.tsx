@@ -95,6 +95,24 @@ export const Plasma = ({
 }: PlasmaProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
   const mousePos = useRef({ x: 0, y: 0 })
+  // Use refs to avoid React re-renders - no state updates in animation loop
+  const rendererRef = useRef<Renderer | null>(null)
+  const programRef = useRef<Program | null>(null)
+  const meshRef = useRef<Mesh | null>(null)
+  const rafRef = useRef<number>(0)
+  const isPausedRef = useRef(false)
+  const isVisibleRef = useRef(true)
+  const isInViewportRef = useRef(true)
+  const lastFrameTimeRef = useRef(0)
+  const t0Ref = useRef(performance.now())
+  const pauseStartTimeRef = useRef<number | null>(null)
+  
+  // Aggressive performance: Cap at 20 FPS maximum
+  const targetFPS = 20
+  const frameInterval = 1000 / targetFPS
+  const animationDuration = 5000 // Stop animation after 5 seconds
+  const animationEndTimeRef = useRef<number | null>(null)
+  const isAnimationStoppedRef = useRef(false)
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -104,12 +122,14 @@ export const Plasma = ({
     const customColorRgb = color ? hexToRgb(color) : [1, 1, 1]
     const directionMultiplier = direction === 'reverse' ? -1.0 : 1.0
 
+    // Aggressive optimization: Cap devicePixelRatio to 1 for lower GPU load
     const renderer = new Renderer({
       webgl: 2,
       alpha: true,
       antialias: false,
-      dpr: Math.min(window.devicePixelRatio || 1, 2)
+      dpr: 1 // Cap to 1 to reduce GPU painting
     })
+    rendererRef.current = renderer
 
     const gl = renderer.gl
     const canvas = gl.canvas
@@ -142,32 +162,34 @@ export const Plasma = ({
         uMouseInteractive: { value: mouseInteractive ? 1.0 : 0.0 }
       }
     })
+    programRef.current = program
 
     const mesh = new Mesh(gl, { geometry, program })
+    meshRef.current = mesh
 
     const handleMouseMove = (e: MouseEvent) => {
-      if (!mouseInteractive) return
+      if (!mouseInteractive || !programRef.current) return
       const rect = containerRef.current?.getBoundingClientRect()
       if (!rect) return
       mousePos.current.x = e.clientX - rect.left
       mousePos.current.y = e.clientY - rect.top
-      const mouseUniform = program.uniforms.uMouse.value
+      const mouseUniform = programRef.current.uniforms.uMouse.value
       mouseUniform[0] = mousePos.current.x
       mouseUniform[1] = mousePos.current.y
     }
 
     if (mouseInteractive) {
-      window.addEventListener('mousemove', handleMouseMove)
+      window.addEventListener('mousemove', handleMouseMove, { passive: true })
     }
 
     const setSize = () => {
-      if (!containerRef.current) return
+      if (!containerRef.current || !rendererRef.current || !programRef.current) return
       const width = window.innerWidth
       const height = window.innerHeight
-      renderer.setSize(width, height)
-      const res = program.uniforms.iResolution.value
-      res[0] = gl.drawingBufferWidth
-      res[1] = gl.drawingBufferHeight
+      rendererRef.current.setSize(width, height)
+      const res = programRef.current.uniforms.iResolution.value
+      res[0] = rendererRef.current.gl.drawingBufferWidth
+      res[1] = rendererRef.current.gl.drawingBufferHeight
     }
 
     const updateContainerHeight = () => {
@@ -193,32 +215,104 @@ export const Plasma = ({
     setSize()
     updateContainerHeight()
 
-    let raf = 0
-    const t0 = performance.now()
+    // IntersectionObserver to pause when outside viewport
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          isInViewportRef.current = entry.isIntersecting
+          updatePauseState()
+        })
+      },
+      { threshold: 0 }
+    )
+    intersectionObserver.observe(containerEl)
 
-    const loop = (t: number) => {
-      let timeValue = (t - t0) * 0.001
-      if (direction === 'pingpong') {
-        const pingpongDuration = 10
-        const segmentTime = timeValue % pingpongDuration
-        const isForward = Math.floor(timeValue / pingpongDuration) % 2 === 0
-        const u = segmentTime / pingpongDuration
-        const smooth = u * u * (3 - 2 * u)
-        const pingpongTime = isForward ? smooth * pingpongDuration : (1 - smooth) * pingpongDuration
-        program.uniforms.uDirection.value = 1.0
-        program.uniforms.iTime.value = pingpongTime
-      } else {
-        program.uniforms.iTime.value = timeValue
+    // Visibility change handler - pause when tab is hidden
+    const handleVisibilityChange = () => {
+      isVisibleRef.current = !document.hidden
+      updatePauseState()
+    }
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    // Update pause state based on visibility and viewport
+    const updatePauseState = () => {
+      const shouldPause = !isVisibleRef.current || !isInViewportRef.current
+      const wasPaused = isPausedRef.current
+      isPausedRef.current = shouldPause
+      
+      // Track pause start time
+      if (shouldPause && !wasPaused) {
+        pauseStartTimeRef.current = performance.now()
+      } else if (!shouldPause && wasPaused && pauseStartTimeRef.current !== null) {
+        // Adjust time offset when resuming
+        const pauseDuration = performance.now() - pauseStartTimeRef.current
+        t0Ref.current += pauseDuration
+        pauseStartTimeRef.current = null
       }
-      renderer.render({ scene: mesh })
-      raf = requestAnimationFrame(loop)
     }
 
-    raf = requestAnimationFrame(loop)
+    // Animation loop with aggressive throttling (20 FPS max) and 5-second limit
+    const loop = (t: number) => {
+      const elapsed = t - lastFrameTimeRef.current
+      
+      // Initialize animation end time on first frame
+      if (animationEndTimeRef.current === null) {
+        animationEndTimeRef.current = t + animationDuration
+      }
+      
+      // Stop animation after 5 seconds - render static frame
+      if (t >= animationEndTimeRef.current && !isAnimationStoppedRef.current) {
+        isAnimationStoppedRef.current = true
+        // Render final static frame once
+        if (rendererRef.current && programRef.current && meshRef.current) {
+          const finalTime = (animationEndTimeRef.current - t0Ref.current) * 0.001
+          programRef.current.uniforms.iTime.value = finalTime
+          rendererRef.current.render({ scene: meshRef.current })
+        }
+        // Stop the animation loop
+        return
+      }
+      
+      // Throttle to 20 FPS maximum (skip frames if needed)
+      if (elapsed >= frameInterval && !isAnimationStoppedRef.current) {
+        lastFrameTimeRef.current = t - (elapsed % frameInterval)
+        
+        // Only render if not paused and animation is still running
+        if (!isPausedRef.current && rendererRef.current && programRef.current && meshRef.current) {
+          let timeValue = (t - t0Ref.current) * 0.001
+          
+          if (direction === 'pingpong') {
+            const pingpongDuration = 10
+            const segmentTime = timeValue % pingpongDuration
+            const isForward = Math.floor(timeValue / pingpongDuration) % 2 === 0
+            const u = segmentTime / pingpongDuration
+            const smooth = u * u * (3 - 2 * u)
+            const pingpongTime = isForward ? smooth * pingpongDuration : (1 - smooth) * pingpongDuration
+            programRef.current.uniforms.uDirection.value = 1.0
+            programRef.current.uniforms.iTime.value = pingpongTime
+          } else {
+            programRef.current.uniforms.iTime.value = timeValue
+          }
+          
+          rendererRef.current.render({ scene: meshRef.current })
+        }
+      }
+      
+      // Only continue loop if animation hasn't stopped
+      if (!isAnimationStoppedRef.current) {
+        rafRef.current = requestAnimationFrame(loop)
+      }
+    }
+
+    t0Ref.current = performance.now()
+    lastFrameTimeRef.current = performance.now()
+    rafRef.current = requestAnimationFrame(loop)
 
     return () => {
-      cancelAnimationFrame(raf)
+      cancelAnimationFrame(rafRef.current)
       ro.disconnect()
+      intersectionObserver.disconnect()
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
       window.removeEventListener('scroll', updateContainerHeight)
       window.removeEventListener('resize', updateContainerHeight)
       if (mouseInteractive) {
@@ -229,6 +323,10 @@ export const Plasma = ({
       } catch {
         console.warn('Canvas already removed from container')
       }
+      // Clear refs
+      rendererRef.current = null
+      programRef.current = null
+      meshRef.current = null
     }
   }, [color, speed, direction, scale, opacity, mouseInteractive])
 
