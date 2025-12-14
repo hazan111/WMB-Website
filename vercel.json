@@ -6,13 +6,13 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "destination": "/index.html"
     }
   ],
   "headers": [
     {
-      "source": "/assets/(.*\\.(js|css|woff2?|png|jpg|jpeg|svg|webp|ico))",
+      "source": "/assets/:path*",
       "headers": [
         {
           "key": "Cache-Control",
@@ -30,7 +30,7 @@
       ]
     },
     {
-      "source": "/(.*\\.html)",
+      "source": "/:path*.html",
       "headers": [
         {
           "key": "Cache-Control",
@@ -58,4 +58,3 @@
     }
   ]
 }
-
