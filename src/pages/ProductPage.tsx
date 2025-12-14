@@ -330,15 +330,15 @@ function ProductPage() {
         {/* Hero Section */}
         <section className="pt-32 pb-24 md:pt-48 md:pb-32">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-white mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tighter text-white mb-6 animate-fade-in opacity-0" style={{ animationDelay: '0.1s' }}>
               WMB Tracker Nasıl Çalışır?
             </h1>
-            <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8">
+            <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-8 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
               WMB Tracker, restoran operasyonlarını web paneli ve mobil uygulama üzerinden tek merkezden yönetmenizi sağlar.
               <br />
               Siparişten raporlamaya tüm süreçler gerçek zamanlı olarak takip edilir.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in opacity-0" style={{ animationDelay: '0.3s' }}>
               <button
                 onClick={() => setIsDemoModalOpen(true)}
                 className="px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-500 transition-colors min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 shadow-lg shadow-blue-500/30"
@@ -362,7 +362,7 @@ function ProductPage() {
           <div className="max-w-6xl mx-auto px-6">
             <div className="space-y-24 md:space-y-32">
               {/* Step 1 */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in opacity-0" style={{ animationDelay: '0.4s' }}>
                 <div className="text-center lg:text-left">
                   <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
                     <div className="w-20 h-20 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
@@ -393,7 +393,7 @@ function ProductPage() {
               </div>
 
               {/* Step 2 */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in opacity-0" style={{ animationDelay: '0.5s' }}>
                 <div className="order-2 lg:order-1 flex justify-center lg:justify-start">
                   {/* Mobile Kitchen App Screenshot */}
                   <div className="relative max-w-[300px] w-full">
@@ -424,7 +424,7 @@ function ProductPage() {
               </div>
 
               {/* Step 3 */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center animate-fade-in opacity-0" style={{ animationDelay: '0.6s' }}>
                 <div className="text-center lg:text-left">
                   <div className="flex items-center justify-center lg:justify-start gap-4 mb-6">
                     <div className="w-20 h-20 rounded-full bg-amber-500/20 border border-amber-500/30 flex items-center justify-center">
@@ -460,7 +460,7 @@ function ProductPage() {
         {/* Web Panel vs Mobile App Comparison */}
         <section className="py-20 md:py-32 bg-slate-900/30">
           <div className="max-w-5xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 animate-fade-in opacity-0" style={{ animationDelay: '0.7s' }}>
               {/* Left: Web Panel */}
               <div className="bg-slate-800/40 rounded-2xl border border-slate-700/30 p-6 shadow-lg shadow-black/5">
                 <div className="mb-6">
@@ -518,10 +518,6 @@ function ProductPage() {
                   </li>
                   <li className="flex items-start gap-3 text-slate-300 leading-relaxed">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400/70 mt-0.5 flex-shrink-0" />
-                    <span>İnternet kesilse bile sipariş almaya devam et (offline destek)</span>
-                  </li>
-                  <li className="flex items-start gap-3 text-slate-300 leading-relaxed">
-                    <CheckCircle2 className="w-5 h-5 text-emerald-400/70 mt-0.5 flex-shrink-0" />
                     <span>Siparişleri mutfakla gerçek zamanlı senkronize et</span>
                   </li>
                 </ul>
@@ -544,7 +540,7 @@ function ProductPage() {
         {/* Value Section */}
         <section className="py-20 md:py-32">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-white mb-12 text-center">
+            <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-white mb-12 text-center animate-fade-in opacity-0" style={{ animationDelay: '0.8s' }}>
               Bu Sistem Neyi Çözer?
             </h2>
             <SolutionCards />
@@ -565,10 +561,10 @@ function ProductPage() {
         {/* Final CTA */}
         <section className="py-24 md:py-32 bg-slate-900/30">
           <div className="max-w-4xl mx-auto px-6 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter text-white mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium tracking-tighter text-white mb-6 animate-fade-in opacity-0" style={{ animationDelay: '0.9s' }}>
               10 Dakikada Anlaşılır, Günlerce Kazandırır
             </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-fade-in opacity-0" style={{ animationDelay: '1s' }}>
               <button
                 onClick={() => setIsDemoModalOpen(true)}
                 className="px-8 py-4 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-500 transition-colors min-h-[44px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 shadow-lg shadow-blue-500/30"

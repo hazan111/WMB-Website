@@ -7,7 +7,10 @@ import SimpleDashboardSection from '../components/sections/SimpleDashboardSectio
 import SectionSkeleton from '../components/ui/SectionSkeleton'
 
 // Lazy load below-the-fold sections
-const PricingSection = lazy(() => import('../components/sections/PricingSection'))
+// Temporarily using CustomPricingSection instead of PricingSection
+// TO RE-ENABLE PRICING: Replace CustomPricingSection with PricingSection below
+const CustomPricingSection = lazy(() => import('../components/sections/CustomPricingSection'))
+// const PricingSection = lazy(() => import('../components/sections/PricingSection'))
 const FAQSection = lazy(() => import('../components/sections/FAQSection'))
 const CTASection = lazy(() => import('../components/sections/CTASection'))
 
@@ -28,7 +31,8 @@ function LandingPage() {
         
         {/* Below-the-fold sections: LAZY loading */}
         <Suspense fallback={<SectionSkeleton />}>
-          <PricingSection />
+          <CustomPricingSection />
+          {/* <PricingSection /> */}
           <FAQSection />
           <CTASection />
         </Suspense>

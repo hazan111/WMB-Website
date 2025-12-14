@@ -1,37 +1,35 @@
-import { memo, useState } from 'react'
+import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import { useInView } from '../../../hooks/useInView'
 
 interface FAQItem {
   question: string
   answer: string
 }
 
-const FAQSection = memo(() => {
+const FeatureFAQ = () => {
+  const { ref, isInView } = useInView({ threshold: 0.1 })
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const faqs: FAQItem[] = [
     {
-      question: 'Kurulum süreci ne kadar sürer?',
-      answer: 'Temel kurulum 2-3 iş günü içinde tamamlanır. Web paneli ve mobil uygulama erişimi hemen aktif edilir. Personel eğitimi ve veri aktarımı gibi ek hizmetler için ek süre gerekebilir. Detaylı bilgi için demo talep edebilirsiniz.'
+      question: 'Kurulum ne kadar sürer?',
+      answer: 'Temel kurulum 2-3 iş günü içinde tamamlanır. Web paneli ve mobil uygulama erişimi hemen aktif edilir. Personel eğitimi ve veri aktarımı gibi ek hizmetler için ek süre gerekebilir.'
     },
     {
-      question: '14 gün ücretsiz deneme nasıl çalışır?',
-      answer: '14 gün ücretsiz deneme ile sistemin tüm temel özelliklerini test edebilirsiniz. Kredi kartı bilgisi gerekmez. Deneme süresi boyunca tam erişim sağlanır. Süre sonunda otomatik olarak ücretlendirme yapılmaz, devam etmek isterseniz bizimle iletişime geçmeniz yeterlidir.'
+      question: 'Şube sayısı arttıkça performans düşer mi?',
+      answer: 'Hayır, sistem ölçeklenebilir bir yapıda tasarlanmıştır. Şube sayısı arttıkça performans etkilenmez. Merkezi raporlama ve yönetim tüm şubeler için hızlı ve stabil çalışır.'
     },
     {
-      question: 'İptal ve iade politikası nedir?',
-      answer: 'İstediğiniz zaman iptal edebilirsiniz. İptal işlemi anında gerçekleşir ve ücretlendirme durur. Kullanılan dönem için iade yapılmaz. İptal sonrası verileriniz 30 gün boyunca saklanır, ardından kalıcı olarak silinir.'
+      question: 'Yetkiler nasıl yönetiliyor?',
+      answer: 'Rol bazlı yetkilendirme sistemi kullanılır. Yöneticiler, garsonlar, kasiyerler gibi roller tanımlanır ve her role özel yetkiler atanır. Şube bazlı erişim kontrolü de mevcuttur.'
     },
     {
-      question: 'Veri güvenliği nasıl sağlanıyor?',
-      answer: 'Tüm veriler 256-bit SSL şifreleme ile korunur. KVKK uyumlu veri saklama ve işleme politikaları uygulanır. Düzenli yedekleme sistemi ile veri kaybı riski minimize edilir. Veriler Türkiye\'de bulunan sunucularda saklanır.'
+      question: 'Verilerimi dışa aktarabilir miyim?',
+      answer: 'Evet, raporlama modülü üzerinden Excel ve PDF formatlarında veri dışa aktarımı yapabilirsiniz. Ciro, sipariş, stok ve performans raporları dışa aktarılabilir.'
     },
     {
-      question: 'Birden fazla şube için nasıl çalışır?',
-      answer: 'Çoklu şube desteği mevcuttur. Her şube için bağımsız menü, ürün ve kullanıcı yönetimi yapabilirsiniz. Merkezi raporlama ile tüm şubelerinizi tek yerden kontrol edebilirsiniz. Şube sayısı ve ihtiyaçlarınıza göre özelleştirilebilir bir çözüm sunuyoruz.'
-    },
-    {
-      question: 'Destek kanalları nelerdir?',
+      question: 'Destek kanalları neler?',
       answer: 'E-posta, telefon ve WhatsApp üzerinden teknik destek sağlanır. Web paneli üzerinden canlı destek sistemi de mevcuttur. Ayrıca detaylı dokümantasyon ve video eğitim içerikleri bulunmaktadır.'
     }
   ]
@@ -41,21 +39,22 @@ const FAQSection = memo(() => {
   }
 
   return (
-    <section id="faq" className="py-24 bg-slate-900/30">
+    <section
+      id="faq"
+      ref={ref}
+      className={`py-24 bg-slate-900/30 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-700`}
+    >
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-white mb-4">
             Sık Sorulan Sorular
           </h2>
-          <p className="text-slate-400 text-lg">
-            Aklınıza takılan soruların yanıtları.
-          </p>
         </div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => {
-            const questionId = `faq-question-${index}`
-            const answerId = `faq-answer-${index}`
+            const questionId = `feature-faq-question-${index}`
+            const answerId = `feature-faq-answer-${index}`
             const isOpen = openIndex === index
 
             return (
@@ -103,8 +102,6 @@ const FAQSection = memo(() => {
       </div>
     </section>
   )
-})
+}
 
-FAQSection.displayName = 'FAQSection'
-
-export default FAQSection
+export default FeatureFAQ

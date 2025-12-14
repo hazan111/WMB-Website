@@ -27,7 +27,7 @@ if (isDevelopment) {
   createRoot(rootElement).render(
     <StrictMode>
       <BrowserRouter>
-        <App />
+      <App />
       </BrowserRouter>
     </StrictMode>
   )

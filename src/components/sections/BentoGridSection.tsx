@@ -8,7 +8,7 @@ const BentoGridSection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-medium tracking-tighter text-white mb-4">
             İşletmenizi Güçlendiren Özellikler
-          </h2>
+        </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
             Operasyonel verimliliği artıran, kar marjlarını optimize eden ve müşteri memnuniyetini yükselten profesyonel araçlar.
           </p>

@@ -94,13 +94,13 @@ const DemoModal = ({ isOpen, onClose }: DemoModalProps) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm overflow-y-auto"
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
       aria-labelledby="demo-modal-title"
     >
-      <div className="relative w-full max-w-md bg-[#1e293b] border border-slate-700 rounded-2xl shadow-2xl">
+      <div className="relative w-full max-w-md bg-[#1e293b] border border-slate-700 rounded-2xl shadow-2xl my-4 max-h-[calc(100vh-5rem)] overflow-y-auto mt-20">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-700">
           <h2 id="demo-modal-title" className="text-xl font-semibold text-white">

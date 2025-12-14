@@ -51,10 +51,10 @@ const HeroSection = memo(() => {
             </svg>
           </button>
           <a 
-            href="#pricing" 
+            href="mailto:info@wmbyazilim.com" 
             className="group h-14 px-8 rounded-xl bg-slate-800/90 text-white border border-white/20 flex items-center justify-center gap-3 hover:bg-slate-700 hover:border-white/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 transition-all active:scale-95 font-medium text-base backdrop-blur-sm min-w-[200px] min-h-[44px]"
           >
-            Fiyatlandırmayı İncele
+            Teklif Al
           </a>
         </div>
 
@@ -66,7 +66,7 @@ const HeroSection = memo(() => {
         {/* Secondary CTA - WhatsApp */}
         <div className="mb-8 animate-fade-in delay-300 opacity-0">
           <a 
-            href="https://wa.me/905XXXXXXXXX" 
+            href="https://wa.me/905511730475?text=Merhaba%20WMB%20Tracker%20hakkında%20bilgi%20almak%20istiyorum" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-green-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-lg px-2 py-1 transition-colors"

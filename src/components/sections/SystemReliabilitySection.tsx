@@ -116,16 +116,20 @@ const SystemReliabilitySection = memo(() => {
             Bize güvenen işletmeler
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-2 gap-6 md:gap-8 items-center justify-items-center mb-4 max-w-md mx-auto">
-            <img
-              src="/ortakoy_logo.jpeg"
-              alt="Ortaköy Logo"
-              className="w-full max-w-[180px] h-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-            />
-            <img
-              src="/pastaci_naim_logo.jpeg"
-              alt="Pastacı Naim Logo"
-              className="w-full max-w-[180px] h-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-            />
+            <div className="w-full max-w-[200px] bg-[#1e293b]/60 border border-slate-700/50 rounded-xl p-6 flex items-center justify-center hover:border-slate-600 transition-colors">
+              <img
+                src="/ortakoy_logo.png"
+                alt="Ortaköy Logo"
+                className="w-full h-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
+            <div className="w-full max-w-[200px] bg-[#1e293b]/60 border border-slate-700/50 rounded-xl p-6 flex items-center justify-center hover:border-slate-600 transition-colors">
+              <img
+                src="/pastaci_naim_logo.png"
+                alt="Pastacı Naim Logo"
+                className="w-full h-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
           </div>
         </div>
       </div>

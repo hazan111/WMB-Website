@@ -31,17 +31,17 @@ const CTASection = memo(() => {
               </svg>
             </button>
             <a 
-              href="#pricing" 
+              href="mailto:info@wmbyazilim.com" 
               className="w-full sm:w-auto px-8 py-4 bg-slate-800/80 text-white border border-white/20 rounded-xl text-base font-medium hover:bg-slate-700/80 hover:border-white/30 transition-all active:scale-95 text-center backdrop-blur-sm min-h-[52px] flex items-center justify-center"
             >
-              Fiyatlandırmayı İncele
+              Bizimle İletişime Geçin
             </a>
           </div>
 
           <div className="pt-8 border-t border-slate-800">
             <p className="text-xs text-slate-500 mb-4">Kurumsal çözümler için:</p>
             <a 
-              href="#" 
+              href="mailto:info@wmbyazilim.com" 
               className="text-sm text-blue-400 hover:text-blue-300 transition-colors font-medium inline-flex items-center gap-2"
             >
               Özel Teklif İsteyin
