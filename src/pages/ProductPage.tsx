@@ -42,14 +42,21 @@ function SolutionCards() {
     )
 
     cardRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref)
+      if (ref) {
+        observer.observe(ref)
+        // Initially show cards with a slight delay for staggered effect
+        const index = cardRefs.current.indexOf(ref)
+        setTimeout(() => {
+          ref.classList.add('is-visible')
+        }, index * 100)
+      }
     })
 
     return () => observer.disconnect()
   }, [])
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-fr">
       {/* Card 1 - Manuel Adisyon Hataları (PRIMARY EMPHASIS) */}
       <div
         ref={(el) => { 

@@ -848,7 +848,7 @@ function FeaturesPage() {
 
   return (
     <Layout>
-      <div className="min-h-screen overflow-x-hidden">
+      <div className="min-h-screen overflow-x-hidden" style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}>
         <FeatureHero onDemoClick={() => setIsDemoModalOpen(true)} />
         
         <PillarSwitcher />

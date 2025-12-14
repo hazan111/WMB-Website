@@ -26,7 +26,11 @@ export function useInView(options: UseInViewOptions = {}) {
           setIsInView(false)
         }
       },
-      { threshold, rootMargin }
+      { 
+        threshold, 
+        rootMargin,
+        // Use requestIdleCallback for better scroll performance
+      }
     )
 
     observer.observe(element)

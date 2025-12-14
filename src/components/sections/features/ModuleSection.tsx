@@ -26,13 +26,13 @@ const ModuleSection = ({
   customVisual,
   rawVisual = false
 }: ModuleSectionProps) => {
-  const { ref, isInView } = useInView({ threshold: 0.1 })
+  const { ref, isInView } = useInView({ threshold: 0.05, rootMargin: '50px' })
 
   return (
     <section
       id={id}
       ref={ref}
-      className={`py-16 md:py-24 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-all duration-700`}
+      className={`py-16 md:py-24 ${isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} transition-opacity transition-transform duration-700`}
     >
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 md:items-center">
