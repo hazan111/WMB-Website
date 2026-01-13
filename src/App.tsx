@@ -11,6 +11,13 @@ import { Routes, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import ProductPage from './pages/ProductPage'
 import FeaturesPage from './pages/FeaturesPage'
+import SupportPage from './pages/SupportPage'
+import PrivacyPage from './pages/PrivacyPage'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
+import FAQPage from './pages/FAQPage'
+import KVKKPage from './pages/KVKKPage'
+import TermsPage from './pages/TermsPage'
 
 function App() {
   return (
@@ -18,6 +25,13 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/product" element={<ProductPage />} />
       <Route path="/features" element={<FeaturesPage />} />
+      <Route path="/destek" element={<SupportPage />} />
+      <Route path="/gizlilik" element={<PrivacyPage />} />
+      <Route path="/hakkimizda" element={<AboutPage />} />
+      <Route path="/iletisim" element={<ContactPage />} />
+      <Route path="/sss" element={<FAQPage />} />
+      <Route path="/kvkk" element={<KVKKPage />} />
+      <Route path="/kullanim-sartlari" element={<TermsPage />} />
     </Routes>
   )
 }

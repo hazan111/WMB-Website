@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const Footer = () => {
   return (
     <footer className="border-t border-slate-800 bg-[#0f172a] py-6 md:py-8">
@@ -22,36 +24,36 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-white mb-3">Kurumsal</h4>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/hakkimizda" 
                   className="text-xs text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1"
                 >
                   Hakkımızda
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/iletisim" 
                   className="text-xs text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1"
                 >
                   İletişim
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#faq" 
+                <Link 
+                  to="/sss" 
                   className="text-xs text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1"
                 >
                   Sıkça Sorulan Sorular
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/destek" 
                   className="text-xs text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1"
                 >
-                  API Dokümantasyonu
-                </a>
+                  Destek
+                </Link>
               </li>
             </ul>
         </div>
@@ -61,28 +63,28 @@ const Footer = () => {
             <h4 className="text-sm font-semibold text-white mb-3">Hukuki</h4>
             <ul className="space-y-2">
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/gizlilik" 
                   className="text-xs text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1"
                 >
                   Gizlilik Politikası
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/kvkk" 
                   className="text-xs text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1"
                 >
                   KVKK Aydınlatma Metni
-                </a>
+                </Link>
               </li>
               <li>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/kullanim-sartlari" 
                   className="text-xs text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1"
                 >
                   Kullanım Şartları
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -93,7 +95,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-3 mb-0">
             <div className="text-center md:text-left">
               <p className="text-xs text-slate-400 mb-0.5">
-                Satış ve destek için: <a href="mailto:info@wmbyazilim.com" className="text-blue-400 hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1">info@wmbyazilim.com</a>
+                Satış ve destek için: <a href="mailto:wmbyazilim@gmail.com" className="text-blue-400 hover:text-blue-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded px-1">wmbyazilim@gmail.com</a>
               </p>
               <p className="text-xs text-slate-500">
                 Türkiye merkezli geliştirilmiştir.
